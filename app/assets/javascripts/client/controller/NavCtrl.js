@@ -7,8 +7,6 @@ Brello.controller('NavCtrl', ['$scope', 'Auth', 'BoardService', function ($scope
 
 	$scope.boards = BoardService.all();
 
-	console.log($scope.boards);
-
 	$scope.$on('board.created', function (event, board) {
 		$scope.boards.push(board);
 	});

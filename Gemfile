@@ -33,6 +33,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-restangular'
   gem 'rails-assets-angular-flash-alert'
   gem "rails-assets-angular-devise"
+  gem "rails-assets-ng-inline-edit"
 end
 
 gem 'devise'

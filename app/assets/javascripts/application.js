@@ -19,4 +19,5 @@
 //= require ui-router
 //= require angular-flash-alert
 //= require angular-devise
+//= require ng-inline-edit
 //= require_tree .

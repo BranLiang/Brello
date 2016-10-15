@@ -29,6 +29,19 @@ class BoardsController < ApplicationController
     end
   end
 
+  def update
+    @board = current_user.boards.find_by_id(params[:id])
+    respond_to do |format|
+      if @board&.update(white_list_params)
+        format.json { render json: @board.to_json, status: 200 }
+      elsif @board
+        format.json { render json: { error: "Update Failed" }, status: "unprocessable_entity" }
+      else
+        format.json { render json: { error: "Not Found" }, status: 404 }
+      end
+    end
+  end
+
   private
     def white_list_params
       params.require(:board).permit(:name, :description)

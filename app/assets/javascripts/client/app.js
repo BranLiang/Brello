@@ -1,4 +1,4 @@
-var Brello = angular.module('Brello', ['ui.router', 'restangular', 'ngFlash', 'Devise']);
+var Brello = angular.module('Brello', ['ui.router', 'restangular', 'ngFlash', 'Devise', 'angularInlineEdit']);
 
 Brello.config(function (RestangularProvider, $stateProvider, $urlRouterProvider) {
 	RestangularProvider.setBaseUrl('/api/v1');
@@ -13,8 +13,6 @@ Brello.config(function (RestangularProvider, $stateProvider, $urlRouterProvider)
 		.state('board.show', {
 			url: ':id',
 			templateUrl: 'templates/boards/show.html',
-			controller: ['$scope', 'BoardService', '$stateParams', function ($scope, BoardService, $stateParams) {
-				$scope.board = BoardService.find($stateParams.id);
-			}]
+			controller: 'showBoardCtrl'
 		})
 })

@@ -1,1 +1,7 @@
-<h1>{{ board.name }}</h1>
+<div class="col-md-12">
+  <blockquote>
+    <p inline-edit="board.name" inline-edit-callback="updateName(newValue)" inline-edit-btn-edit="" inline-edit-on-click></p>
+    <p inline-edit="board.description" inline-edit-callback="updateDescription(newValue)"
+    inline-edit-btn-edit="" inline-edit-on-click class="text-muted"></p>
+  </blockquote>
+</div>
