@@ -1,9 +1,10 @@
 <div class="home-page" ng-app="Brello">
 
+  <!-- Nav Controller -->
   <nav class="navbar navbar-default" ng-controller="NavCtrl">
     <div class="container-fluid">
       <!-- logo brand -->
-      <a class="navbar-brand" href="#">Brello</a>
+      <a class="navbar-brand" ui-sref="board">Brello</a>
 
       <!-- board button -->
       <div class="btn-group navbar-btn">
@@ -13,6 +14,7 @@
         <ul class="dropdown-menu">
           <li><a href="#" data-toggle="modal" data-target="#newBoardModal">New Board</a></li>
           <li role="separator" class="divider"></li>
+          <li ng-repeat="board in boards"><a ui-sref="board.show({id: {{board.id}}})">{{ board.name }}</a></li>
           <!-- <li><a href="#">Another action</a></li>
           <li><a href="#">Something else here</a></li>
           <li><a href="#">Separated link</a></li> -->
@@ -25,6 +27,7 @@
   </nav>
 
   <!-- Modal -->
+  <!-- New Board Controller -->
   <div ng-controller="newBoardCtrl">
     <div class="modal fade" id="newBoardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -52,8 +55,7 @@
         </div>
       </div>
     </div>
-
   </div>
 
-  <h1>Home page</h1>
+  <div ui-view></div>
 </div>
