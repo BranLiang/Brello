@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
+//= require lodash
+//= require restangular
+//= require bootstrap
+//= require ui-router
+//= require angular-flash-alert
+//= require angular-devise
 //= require_tree .

@@ -25,8 +25,18 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'devise'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-angular'
+  gem 'rails-assets-lodash'
+  gem 'rails-assets-ui-router'
+  gem 'rails-assets-restangular'
+  gem 'rails-assets-angular-flash-alert'
+  gem "rails-assets-angular-devise"
+end
 
+gem 'devise'
+gem 'angular_rails_csrf'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
