@@ -34,6 +34,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-flash-alert'
   gem "rails-assets-angular-devise"
   gem "rails-assets-ng-inline-edit"
+  gem "rails-assets-angular-drag-and-drop-lists"
 end
 
 gem 'devise'

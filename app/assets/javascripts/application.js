@@ -20,4 +20,5 @@
 //= require angular-flash-alert
 //= require angular-devise
 //= require ng-inline-edit
+//= require angular-drag-and-drop-lists
 //= require_tree .

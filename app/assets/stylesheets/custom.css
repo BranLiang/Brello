@@ -1,0 +1,4 @@
+div[dnd-list], div[dnd-list] > li {
+    position: relative;
+    list-style: none;
+}

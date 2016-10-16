@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   scope :api do
     scope :v1 do
       resources :boards, only: [:index, :create, :destroy, :update, :show]
-      resources :lists, only: [:create, :update, :destroy]
+      resources :lists, only: [:create, :update, :destroy, :show]
     end
   end
 end

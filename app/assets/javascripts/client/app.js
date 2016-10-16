@@ -1,4 +1,4 @@
-var Brello = angular.module('Brello', ['ui.router', 'restangular', 'ngFlash', 'Devise', 'angularInlineEdit']);
+var Brello = angular.module('Brello', ['ui.router', 'restangular', 'ngFlash', 'Devise', 'angularInlineEdit', 'dndLists']);
 
 Brello.config(function (RestangularProvider, $stateProvider, $urlRouterProvider) {
 	RestangularProvider.setBaseUrl('/api/v1');

@@ -9,20 +9,29 @@
 
   <div ng-controller="listCtrl">
     <!-- list show -->
-    <div class="col-md-3" ng-repeat="list in lists">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title text-center">{{ list.title }}</h3>
-        </div>
+    <div dnd-list="lists">
+      <li class="col-md-2"
+      ng-repeat="list in lists"
+      dnd-draggable="list"
+      dnd-moved="lists.splice($index, 1)">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center"
+            inline-edit="list.title" inline-edit-callback="updateTitle(newValue, list.id)"
+            inline-edit-btn-edit="" inline-edit-on-click>
+            <a href="" ng-click=deleteList(list)><span class="glyphicon glyphicon-remove pull-right text-muted"></span></a>
+            </h3>
+          </div>
         <div class="panel-body">
           Panel content
         </div>
       </div>
-    </div>
+    </li>
+  </div>
 
 
     <!-- new list link -->
-    <div class="newListLink col-md-2">
+    <div class="newListLink col-sm-2">
       <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseListForm" aria-expanded="false" aria-controls="collapseExample">
         Create a new list...
       </button>
@@ -33,7 +42,7 @@
             <input type="text" name="title" ng-model="listParams.title" class="form-control" placeholder="New list title here">
           </div>
           <div class="form-group">
-            <input type="submit" name="Create" ng-click="createList(listParams)" class="btn btn-success">
+            <input type="submit" name="Create" ng-click="createList(listParams)" class="btn btn-success btn-block">
           </div>
         </form>
       </div>
