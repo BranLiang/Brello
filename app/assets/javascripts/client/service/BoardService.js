@@ -15,7 +15,8 @@ Brello.factory('BoardService', ['Restangular', '$state', '$rootScope', function 
 	};
 
 	BoardService.find = function (id) {
-		return Restangular.one('boards', id).get().$object;
+		var board = Restangular.one('boards', id).get().$object;
+		return board;
 	};
 
 	BoardService.all = function () {

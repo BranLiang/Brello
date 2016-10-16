@@ -15,7 +15,7 @@ class BoardsController < ApplicationController
     @board = current_user.boards.find_by_id(params[:id])
     respond_to do |format|
       if @board
-        format.json { render json: @board.to_json, status: 200 }
+        format.json { render json: @board.to_json(:include => :lists), status: 200 }
       else
         format.json { render json: { error: "Not Found" }, status: 404 }
       end
