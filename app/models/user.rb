@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :user_boards, dependent: :destroy
   has_many :boards, through: :user_boards
   has_many :lists, through: :boards
+  has_many :cards, through: :lists
 end
