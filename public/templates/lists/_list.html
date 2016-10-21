@@ -3,7 +3,7 @@
     <h3 class="panel-title text-center"
     inline-edit="list.title" inline-edit-callback="updateTitle(newValue, list.id)"
     inline-edit-btn-edit="" inline-edit-on-click>
-    <a href="" ng-click=deleteList(list)><span class="glyphicon glyphicon-remove pull-right text-muted"></span></a>
+    <a href="" ng-click="deleteList({list: list})"><span class="glyphicon glyphicon-remove pull-right text-muted"></span></a>
   </h3>
 </div>
 <div class="panel-body">
