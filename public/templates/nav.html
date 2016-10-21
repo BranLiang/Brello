@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <a class="navbar-brand" ui-sref="board">Brello</a>
+
+    <div class="btn-group navbar-btn">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Boards
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="" data-toggle="modal" data-target="#newBoardModal">New Board</a></li>
+        <li role="separator" class="divider"></li>
+        <li ng-repeat="board in boards"><a ui-sref="board.show({id: {{board.id}}})">{{ board.name }}</a></li>
+      </ul>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <p class="navbar-text">Signed in as <a href="#" class="navbar-link">{{ user.username }}</a> <a href="#" ng-click="logout()">Log Out</a></p>
+    </ul>
+  </div>
+</nav>

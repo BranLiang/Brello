@@ -6,9 +6,11 @@ Brello.factory('BoardService', ['Restangular', '$state', '$rootScope', function 
 			board: params
 		}).then(
 			function success(board) {
-				console.log(board);
 				angular.element('#newBoardModal').modal('hide');
 				$rootScope.$broadcast('board.created', board);
+				$state.go('board.show', {
+					id: board.id
+				});
 				return board;
 			}
 		);
