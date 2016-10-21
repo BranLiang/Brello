@@ -18,6 +18,14 @@ Brello.directive("list", ['CardService', function (CardService) {
 				scope.cardParams = {};
 			};
 
+			scope.deleteCard = function (card) {
+				CardService.delete(card).then(
+					function () {
+						scope.list.cards.splice(scope.list.cards.indexOf(card), 1);
+					}
+				)
+			};
+
 			// scope.$on('card.created', function (event, card) {
 			// 	scope.list.cards.push(card);
 			// });

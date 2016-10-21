@@ -9,7 +9,9 @@
 <div class="panel-body">
   <!-- card list -->
   <ul class="list-group">
-    <li class="list-group-item" ng-repeat="card in list.cards">{{ card.title }}</li>
+    <li class="list-group-item" ng-repeat="card in list.cards" >{{ card.title }}
+      <a href="" ng-click="deleteCard(card)"><span class="glyphicon glyphicon-remove pull-right text-muted"></span></a>
+    </li>
   </ul>
 
 

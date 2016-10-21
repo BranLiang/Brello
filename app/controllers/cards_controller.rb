@@ -11,6 +11,17 @@ class CardsController < ApplicationController
     end
   end
 
+  def destroy
+    respond_to do |format|
+      @card = current_user.cards.find_by_id(params[:id])
+      if @card&.destroy
+        format.json { render json: true, status: 200 }
+      else
+        format.json { render json: { error: "Not Found" }, status: 404 }
+      end
+    end
+  end
+
 
   private
     def white_list_params

@@ -12,5 +12,9 @@ Brello.factory('CardService', ['Restangular', '$rootScope', function (Restangula
 		);
 	};
 
+	CardService.delete = function (card) {
+		return Restangular.one('cards', card.id).remove();
+	};
+
 	return CardService;
 }]);
