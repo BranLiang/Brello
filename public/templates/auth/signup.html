@@ -1,0 +1,36 @@
+<div class="landing-page">
+  <nav class="navbar navbar-default">
+    <a class="navbar-brand" href="#">Brello</a>
+  </nav>
+
+  <h1 class="text-center">Welcome to Brello</h1>
+  <h2 class="text-center">Project Management</h2>
+  <p class="text-muted text-center">
+    Please sign up to continue.
+  </p>
+
+  <div class="sign-in col-md-4 col-md-offset-4">
+    <form ng-init="signupParams = {}">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" name="username" ng-model="signupParams.username" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" class="form-control" ng-model="signupParams.email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" name="password" class="form-control" ng-model="signupParams.password">
+      </div>
+      <div class="form-group">
+        <label for="password_confirmation">Confirm Password:</label>
+        <input type="password" name="password" class="form-control" ng-model="signupParams.password_confirmation">
+      </div>
+      <div class="form-group">
+        <input type="submit" name="Log In" ng-click="signup(signupParams)" class="btn btn-primary btn-lg btn-block">
+      </div>
+    </form>
+  </div>
+
+</div>

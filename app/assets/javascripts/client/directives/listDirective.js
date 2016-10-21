@@ -26,9 +26,6 @@ Brello.directive("list", ['CardService', function (CardService) {
 				)
 			};
 
-			// scope.$on('card.created', function (event, card) {
-			// 	scope.list.cards.push(card);
-			// });
 		}
 	};
 }]);
