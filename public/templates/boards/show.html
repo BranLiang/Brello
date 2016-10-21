@@ -1,5 +1,6 @@
 <div class="col-md-12">
   <div ng-controller="showBoardCtrl">
+    <a href="" ng-click="deleteBoard(board)">Delete Board</a>
     <blockquote>
       <p inline-edit="board.name" inline-edit-callback="updateName(newValue)" inline-edit-btn-edit="" inline-edit-on-click></p>
       <p inline-edit="board.description" inline-edit-callback="updateDescription(newValue)"
@@ -9,7 +10,7 @@
 
   <div ng-controller="listCtrl">
     <!-- list show -->
-    <div dnd-list="lists" class="row row-horizon">
+    <div dnd-list="lists">
       <list class="col-md-2"
         ng-repeat="list in lists"
         dnd-draggable="list"

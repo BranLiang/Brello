@@ -42,6 +42,17 @@ class BoardsController < ApplicationController
     end
   end
 
+  def destroy
+    @board = current_user.boards.find_by_id(params[:id])
+    respond_to do |format|
+      if @board&.destroy
+        format.json { render json: true, status: 200 }
+      else
+        format.json { render json: { error: "Not Found" }, status: 404 }
+      end
+    end
+  end
+
   private
     def white_list_params
       params.require(:board).permit(:name, :description)

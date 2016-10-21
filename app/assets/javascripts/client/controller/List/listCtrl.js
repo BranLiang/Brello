@@ -11,10 +11,6 @@ Brello.controller('listCtrl', ['$scope', 'ListService', '$stateParams', 'BoardSe
 			);
 		};
 
-		$scope.updateTitle = function (newValue, id) {
-			return ListService.updateTitle(newValue, id);
-		};
-
 		$scope.deleteList = function (list) {
 			return ListService.delete(list);
 		};

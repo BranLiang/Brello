@@ -1,5 +1,5 @@
-Brello.controller('showBoardCtrl', ['$scope', 'BoardService', '$stateParams', '$rootScope',
-	function ($scope, BoardService, $stateParams, $rootScope) {
+Brello.controller('showBoardCtrl', ['$scope', 'BoardService', '$stateParams', '$rootScope', '$state',
+	function ($scope, BoardService, $stateParams, $rootScope, $state) {
 		BoardService.find($stateParams.id).then(
 			function success(board) {
 				$rootScope.board = board
@@ -20,6 +20,10 @@ Brello.controller('showBoardCtrl', ['$scope', 'BoardService', '$stateParams', '$
 					description: newValue
 				}
 			})
+		};
+
+		$scope.deleteBoard = function (board) {
+			BoardService.delete(board);
 		};
 	}
 ]);

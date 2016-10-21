@@ -21,6 +21,10 @@ Brello.directive('myNav', ['Auth', 'BoardService', '$state', function (Auth, Boa
 			scope.$on('board.created', function (event, board) {
 				scope.boards.push(board);
 			});
+
+			scope.$on('board.deleted', function (event, board) {
+				scope.boards.splice(scope.boards.indexOf(board), 1);
+			});
 		}
 	}
 }]);

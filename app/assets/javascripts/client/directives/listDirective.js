@@ -1,4 +1,4 @@
-Brello.directive("list", ['CardService', function (CardService) {
+Brello.directive("list", ['CardService', 'ListService', function (CardService, ListService) {
 	return {
 		templateUrl: "templates/lists/_list.html",
 		restrict: "E",
@@ -24,6 +24,10 @@ Brello.directive("list", ['CardService', function (CardService) {
 						scope.list.cards.splice(scope.list.cards.indexOf(card), 1);
 					}
 				)
+			};
+
+			scope.updateTitle = function (newValue, id) {
+				return ListService.updateTitle(newValue, id);
 			};
 
 		}
