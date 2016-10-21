@@ -13,5 +13,5 @@ Brello.config(function (RestangularProvider, $stateProvider, $urlRouterProvider)
 		.state('board.show', {
 			url: ':id',
 			templateUrl: 'templates/boards/show.html',
-		})
-})
+		});
+});

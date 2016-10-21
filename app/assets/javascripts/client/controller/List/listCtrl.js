@@ -1,7 +1,6 @@
 Brello.controller('listCtrl', ['$scope', 'ListService', '$stateParams', 'BoardService', '$rootScope', 'CardService',
 	function ($scope, ListService, $stateParams, BoardService, $rootScope, CardService) {
 		$scope.createList = function (params) {
-			console.log("sdkfjdks")
 			return ListService.create({
 				title: params.title,
 				board_id: $stateParams.id
@@ -28,19 +27,5 @@ Brello.controller('listCtrl', ['$scope', 'ListService', '$stateParams', 'BoardSe
 			var index = _.indexOf($rootScope.lists, list);
 			$rootScope.lists.splice(index, 1);
 		});
-
-		// for the card service
-		$scope.createCard = function (params, list_id) {
-			CardService.create({
-				title: params.title,
-				list_id: list_id
-			});
-			$scope.cardParams = {};
-		};
-
-		$scope.$on('card.created', function (event, card) {
-			$scope.list.cards.push(card);
-		});
-
 	}
 ]);

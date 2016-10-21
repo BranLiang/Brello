@@ -4,7 +4,7 @@ class ListsController < ApplicationController
     @list = List.new(white_list_params)
     respond_to do |format|
       if @board && @list.save
-        format.json { render json: @list, status: 200 }
+        format.json { render json: @list.to_json(include: :cards), status: 200 }
       else
         format.json { render json: { error: "List create failed." }, status: "unprocessable_entity" }
       end

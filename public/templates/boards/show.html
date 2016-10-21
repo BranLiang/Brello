@@ -9,48 +9,13 @@
 
   <div ng-controller="listCtrl">
     <!-- list show -->
-        <div dnd-list="lists">
-          <li class="col-md-2"
-          ng-repeat="list in lists"
-          dnd-draggable="list"
-          dnd-moved="lists.splice($index, 1)">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title text-center"
-              inline-edit="list.title" inline-edit-callback="updateTitle(newValue, list.id)"
-              inline-edit-btn-edit="" inline-edit-on-click>
-              <a href="" ng-click=deleteList(list)><span class="glyphicon glyphicon-remove pull-right text-muted"></span></a>
-            </h3>
-          </div>
-          <div class="panel-body">
-              <!-- card list -->
-              <ul class="list-group">
-                <li class="list-group-item" ng-repeat="card in list.cards">{{ card.title }}</li>
-              </ul>
-
-
-              <!-- create new card -->
-              <div class="newCardLink">
-                <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#collapseCardForm{{list.id}}" aria-expanded="false" aria-controls="collapseExample">
-                  Create a new card...
-                </button>
-                <div class="collapse" id="collapseCardForm{{list.id}}">
-                  <hr>
-                  <form name="cardForm" ng-init="cardParams = {}">
-                    <div class="form-group">
-                      <input type="text" name="title" ng-model="cardParams.title" class="form-control" placeholder="New card title here">
-                    </div>
-                    <div class="form-group">
-                      <input type="submit" name="Create" ng-click="createCard(cardParams, list.id)" class="btn btn-success btn-block">
-                    </div>
-                  </form>
-                </div>
-              </div><!-- end of the new card -->
-
-
-          </div>
-        </div>
-      </li>
+    <div dnd-list="lists">
+      <list class="col-md-2"
+        ng-repeat="list in lists"
+        dnd-draggable="list"
+        dnd-moved="lists.splice($index, 1)"
+        list="list">
+      </list>
     </div>
 
 
@@ -72,6 +37,4 @@
       </div>
     </div>
   </div>
-
-
 </div>
