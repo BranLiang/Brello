@@ -1,5 +1,5 @@
-Brello.controller('listCtrl', ['$scope', 'ListService', '$stateParams', 'BoardService', '$rootScope',
-	function ($scope, ListService, $stateParams, BoardService, $rootScope) {
+Brello.controller('listCtrl', ['$scope', 'ListService', '$stateParams', 'BoardService', '$rootScope', 'CardService',
+	function ($scope, ListService, $stateParams, BoardService, $rootScope, CardService) {
 		$scope.createList = function (params) {
 			console.log("sdkfjdks")
 			return ListService.create({
@@ -27,6 +27,19 @@ Brello.controller('listCtrl', ['$scope', 'ListService', '$stateParams', 'BoardSe
 		$scope.$on('list.deleted', function (event, list) {
 			var index = _.indexOf($rootScope.lists, list);
 			$rootScope.lists.splice(index, 1);
+		});
+
+		// for the card service
+		$scope.createCard = function (params, list_id) {
+			CardService.create({
+				title: params.title,
+				list_id: list_id
+			});
+			$scope.cardParams = {};
+		};
+
+		$scope.$on('card.created', function (event, card) {
+			$scope.list.cards.push(card);
 		});
 
 	}

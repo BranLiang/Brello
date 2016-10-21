@@ -1,9 +1,15 @@
-Brello.controller('NavCtrl', ['$scope', 'Auth', 'BoardService', function ($scope, Auth, BoardService) {
+Brello.controller('NavCtrl', ['$scope', 'Auth', 'BoardService', '$state', function ($scope, Auth, BoardService, $state) {
 	Auth.currentUser().then(function (user) {
 		$scope.user = user;
 	});
 
-	$scope.logout = Auth.logout;
+	$scope.logout = function () {
+		Auth.logout().then(
+			function () {
+				$state.go('board');
+			}
+		);
+	};
 
 	$scope.boards = BoardService.all();
 

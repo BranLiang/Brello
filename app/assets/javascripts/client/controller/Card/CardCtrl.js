@@ -7,9 +7,9 @@ Brello.controller('CardCtrl', ['$scope', 'CardService', function ($scope, CardSe
 		$scope.cardParams = {};
 	};
 
-	// $scope.$on('card.created', function (event, card) {
-	// 	$scope.list.cards.push(card);
-	// });
+	$scope.$on('card.created', function (event, card) {
+		$scope.list.cards.push(card);
+	});
 
 	console.log($scope.list.cards);
 
