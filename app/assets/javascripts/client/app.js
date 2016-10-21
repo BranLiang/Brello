@@ -46,7 +46,21 @@ Brello.config(function (RestangularProvider, $stateProvider, $urlRouterProvider)
 		})
 		.state('board', {
 			url: '/',
-			templateUrl: "templates/board.html"
+			templateUrl: "templates/board.html",
+			resolve: {
+				currentUser: ['$state', 'Auth',
+					function ($state, Auth) {
+						return Auth.currentUser().then(
+							function success(user) {
+								return user;
+							},
+							function (error) {
+								$state.go('signin');
+							}
+						);
+					}
+				]
+			}
 		})
 		.state('board.show', {
 			url: ':id',

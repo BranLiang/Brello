@@ -6,7 +6,7 @@ Brello.controller('NavCtrl', ['$scope', 'Auth', 'BoardService', '$state', functi
 	$scope.logout = function () {
 		Auth.logout().then(
 			function () {
-				$state.go('board');
+				$state.go('signin');
 			}
 		);
 	};
